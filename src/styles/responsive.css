@@ -29,9 +29,12 @@
 
     .nav__item {
         display: list-item;
-        border-bottom: 1px solid #E0E0E0;
         width: 100%;
         text-align: left;
+    }
+
+    .nav__item a{
+        width: 100%;
     }
 }
 
