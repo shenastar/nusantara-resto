@@ -81,6 +81,20 @@
     .post-item__description {
         font-size: 14px;
     }
+
+    .detail {
+        grid-template-columns: auto 1fr;
+    }
+   
+    .detail .detail__title {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+   
+    .detail .detail__overview {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
 }
 
 @media screen and (min-width: 700px) {
