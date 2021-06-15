@@ -21,3 +21,9 @@ window.addEventListener('load', () => {
   swRegister();
   WebSocketInitiator.init(CONFIG.WEB_SOCKET_SERVER);
 });
+
+// const btnKomen = document.querySelector('#btnKomen');
+
+// btnKomen.addEventListener('click', () => {
+//   app.kirimKomentar();
+// });

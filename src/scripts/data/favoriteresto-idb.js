@@ -12,6 +12,7 @@ const dbPromise = openDB(DATABASE_NAME, DATABASE_VERSION, {
 
 const FavoriteRestoIdb = {
   async getResto(id) {
+    console.log(id);
     return (await dbPromise).get(OBJECT_STORE_NAME, id);
   },
   async getAllResto() {

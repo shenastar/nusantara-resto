@@ -27,6 +27,11 @@ class App {
     this._content.innerHTML = await page.render();
     await page.afterRender();
   }
+
+  kirimKomentar() {
+    const html = document.querySelector('#nameF');
+    console.log(html.value);
+  }
 }
 
 export default App;

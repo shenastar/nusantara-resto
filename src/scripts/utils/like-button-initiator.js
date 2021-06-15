@@ -5,13 +5,11 @@ const LikeButtonInitiator = {
   async init({ likeButtonContainer, resto }) {
     this._likeButtonContainer = likeButtonContainer;
     this._resto = resto;
-
     await this._renderButton();
   },
 
   async _renderButton() {
     const { id } = this._resto;
-
     if (await this._isRestoExist(id)) {
       this._renderLiked();
     } else {
