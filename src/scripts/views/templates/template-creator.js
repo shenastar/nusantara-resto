@@ -64,7 +64,14 @@ const createRestoDetailTemplate = (resto) => {
             <div class="menu_list">${drinks}</div>
         </div>
     </div>
-`;
+    <div class="latest">
+        <div class="par-heading">
+            <span class="sub-heading">Reviews</span>
+            <h1 class="latest__label font_h2">Customer</h1>
+        </div>
+    </div>
+    <div class="reviews" id="contentReviews"></div>
+  `;
 };
 
 const createRestoItemTemplate = (resto) => {
@@ -101,9 +108,28 @@ const createLikedButtonTemplate = () => `
   </button>
 `;
 
+const createReviewerTemplate = (reviewer) => `
+  <div class="reviews_content mySlides">
+    <div class="reviews_customer">
+        <div class="reviews_data">
+            <h4>${reviewer.name}</h4>
+            <p>${reviewer.date}</p>
+        </div>
+        <div class="reviews_circle">
+            <span class="reviews_initial">${reviewer.name[0]}</span>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="reviews_des">
+        <p>"${reviewer.review}"</p>
+    </div>
+  </div>
+`;
+
 export {
   createRestoItemTemplate,
   createRestoDetailTemplate,
   createLikeButtonTemplate,
   createLikedButtonTemplate,
+  createReviewerTemplate,
 };

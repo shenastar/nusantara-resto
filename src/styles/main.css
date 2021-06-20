@@ -609,6 +609,8 @@ footer a {
     border-radius: 5px;
     box-shadow: 0 0px 10px 0 var(--color-font);
     padding: 10px;
+
+    height: 300px;
 }
 
 .reviews_customer {
@@ -621,16 +623,15 @@ footer a {
     background-color: var(--color-bg2);
     border-radius: 50%;
     border: 2px solid var(--color-font);
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .reviews_initial {
     font-size: 30px;
-    position: relative;
     color: var(--color-font);
     font-family: var(--font-family);
-    text-align: center;
-    top: 5px;
 }
 
 .reviews_data h4 {
@@ -648,9 +649,13 @@ footer a {
     font-size: 20px;
 }
 
-/* 
-    w3
-*/
+.reviews_des p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+}
 
 .reviews_input {
     max-width: 480px;
@@ -721,6 +726,6 @@ footer a {
     resize: none;
 }
 
-.swiper-container {
-    width: 1000px !important;
-}
+.mySlides {display:none}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}

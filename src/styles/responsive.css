@@ -95,6 +95,14 @@
     .reviews {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .swiper-container {
+        width: 1000px !important;
+    }
+
+    .swiper-slide {
+        width: 1000px !important;
+    }
    
     .detail .detail__title {
         grid-column-start: 1;
