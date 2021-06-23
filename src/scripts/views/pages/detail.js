@@ -3,6 +3,7 @@ import TheRestoDbSource from '../../data/restodb-source';
 import { createRestoDetailTemplate } from '../templates/template-creator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
 import ReviewerInitiator from '../../utils/reviewer-initiator';
+import NewReviewer from '../../utils/new-reviewer';
 
 const Detail = {
   async render() {
@@ -16,12 +17,7 @@ const Detail = {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const detail = await TheRestoDbSource.detailResto(url.id);
     const detailContainer = document.querySelector('#detail');
-    // eslint-disable-next-line no-restricted-globals
-    const w = screen.width;
-    // eslint-disable-next-line no-restricted-globals
-    console.log(screen.width);
     detailContainer.innerHTML = createRestoDetailTemplate(detail.restaurant);
-    console.log(detail.restaurant.customerReviews);
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
       resto: {
@@ -36,6 +32,13 @@ const Detail = {
     ReviewerInitiator.init({
       reviewerContainer: document.querySelector('#contentReviews'),
       reviewer: detail.restaurant.customerReviews,
+      nextButton: document.querySelector('.fa-angle-right'),
+      prevButton: document.querySelector('.fa-angle-left'),
+      indexSlide: document.querySelector('#indexSlide'),
+    });
+    NewReviewer.init({
+      id: detail.restaurant.id,
+      button: document.querySelector('#btnReview'),
     });
   },
 };

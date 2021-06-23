@@ -1,7 +1,6 @@
 import CONFIG from '../../globals/config';
 
 const createRestoDetailTemplate = (resto) => {
-  console.log(resto);
   let foods;
   let drinks;
   let categories;
@@ -11,13 +10,13 @@ const createRestoDetailTemplate = (resto) => {
   categories = '';
 
   resto.menus.foods.forEach((food) => {
-    foods += `<div><a href="">${food.name}</a></div>`;
+    foods += `<div><a href="/#/search/food/${food.name}">${food.name}</a></div>`;
   });
   resto.menus.drinks.forEach((drink) => {
-    drinks += `<div><a href="">${drink.name}</a></div>`;
+    drinks += `<div><a href="/#/search/drinks/${drink.name}">${drink.name}</a></div>`;
   });
   resto.categories.forEach((categorie) => {
-    categories += `<a class="detail__categories" href="">${categorie.name}</a>`;
+    categories += `<a class="detail__categories" href="/#/search/categories/${categorie.name}">${categorie.name}</a>`;
   });
 
   return `
@@ -71,6 +70,29 @@ const createRestoDetailTemplate = (resto) => {
         </div>
     </div>
     <div class="reviews" id="contentReviews"></div>
+    <div class="reviews_foot">
+        <button class="fa fa-angle-left"></button>
+        <div id="indexSlide"> Oiw </div>
+        <button class="fa fa-angle-right"></button>
+    </div>
+    <div class="reviews_input">
+        <div class="reviews_title">
+            <h2>Review Baru</h2>
+        </div>
+        <div class="reviews_form">
+            <div class="form_input">
+                <label><b>Nama</b></label>
+                <input id="inputName" name="first" type="text">
+            </div>
+            <div class="form_input">
+                <label class="reviews_subtitle"><b>Reviews</b></label>
+                <textarea id="inputReview"></textarea>
+            </div>
+            <div>
+                <button class="input_btn" id="btnReview">Kirim</button>
+            </div>
+        </div>
+    </div>
   `;
 };
 
@@ -116,7 +138,7 @@ const createReviewerTemplate = (reviewer) => `
             <p>${reviewer.date}</p>
         </div>
         <div class="reviews_circle">
-            <span class="reviews_initial">${reviewer.name[0]}</span>
+            <span class="reviews_initial">${reviewer.name[0].toUpperCase()}</span>
         </div>
     </div>
     <div class="divider"></div>

@@ -569,6 +569,7 @@ footer a {
     border: 2px solid var(--color-font2);
     border-radius: 5px;
     padding: 8px;
+    height: 90%;
 }
 
 .menu_list a {
@@ -601,7 +602,6 @@ footer a {
     width: 100%;
     max-width: 1000px;
     gap: 5px 5px;
-    padding-bottom: 50px;
 }
 
 .reviews_content {
@@ -626,6 +626,9 @@ footer a {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 60px;
+    height: 60px;
+    justify-self: end;
 }
 
 .reviews_initial {
@@ -636,7 +639,8 @@ footer a {
 
 .reviews_data h4 {
     font-size: 22px;
-    max-height: 30px;
+    max-height: 34px;
+    margin: 5px;
     
     overflow: hidden;
     text-overflow: ellipsis;
@@ -646,7 +650,8 @@ footer a {
 }
 
 .reviews_data p {
-    font-size: 20px;
+    font-size: 14px;
+    margin: 5px;
 }
 
 .reviews_des p {
@@ -674,6 +679,40 @@ footer a {
 .reviews_form {
     padding: 16px;
     color: var(--color-font2);
+}
+
+.reviews_foot {
+    width: 200px;
+    margin: 20px auto;
+    text-align: center;
+    display: grid;
+    font-size: 24px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.reviews_foot button {
+    min-height: 50px;
+    font-size: 45px;
+    background-color: var(--color-bg);
+    color: var(--color-font2);
+    border: none;
+}
+
+.reviews_foot button:hover {
+    font-size: 50px;
+    color: var(--color-font);
+}
+
+.reviews_foot button:active {
+    font-size: 45px;
+    color: var(--color-font2);
+}
+
+.reviews_foot div {
+    min-height: 45px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 .form_input {
@@ -727,5 +766,3 @@ footer a {
 }
 
 .mySlides {display:none}
-.w3-left, .w3-right, .w3-badge {cursor:pointer}
-.w3-badge {height:13px;width:13px;padding:0}

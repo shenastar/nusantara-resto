@@ -15,8 +15,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Secular+One&display=swap">
-
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
@@ -41,80 +39,6 @@
             <div class="container"><small>Copyright © NmkzShin 2021</small></div>
         </div>
     </footer>
-    <!-- <script>
-        let plusIndex, minIndex, slideIndex;
-        const reviews = 7;
-
-        slideIndex = 0;
-        plusIndex = 0;
-        minIndex = 0;
-        plusDivs();
-
-        console.log("screen width: "+screen.width);
-
-        function plusDivs() {
-            const slides = hideReviewer();
-            minIndex = plusIndex - 1;
-            const loop = countLoop(plusIndex);
-            for (let i = 0; i < loop; i++) {
-                if(plusIndex >= slides.length){
-                    plusIndex = 0;
-                    if(i == 0){
-                        plusDivs();
-                    }
-                    return
-                }else{
-                    console.log(plusIndex);
-                    slides[plusIndex].style.display = "block";
-                }
-                plusIndex++;
-            }
-        }
-
-        function minDivs() {
-            const slides = hideReviewer();
-            plusIndex = minIndex + 1;
-            let loop;
-            if(minIndex < 0){
-                minIndex = slides.length - 1;
-                loop = countLoop(minIndex + 1);
-            }else{
-                loop = countLoop(3);
-            }
-            for (let i = 0; i < loop; i++) {
-                console.log(minIndex);
-                slides[minIndex].style.display = "block";
-                minIndex--;
-            }
-        }
-
-        function hideReviewer(){
-            const slides = document.getElementsByClassName("mySlides");
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            return slides;
-        }
-
-        function countLoop(index){
-            if(screen.width > 500){
-                const sisa = Math.abs(index) % 3;
-                if(sisa == 0){
-                    return 3;
-                }else{
-                    return sisa;
-                }
-            }else{
-                return 1;
-            }
-        }
-
-        // auto();
-        function auto() {
-            plusDivs();
-            setTimeout(auto, 5000);
-        }
-    </script> -->
 </body>
 
 </html>

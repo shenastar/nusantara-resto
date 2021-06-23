@@ -2,20 +2,50 @@
 import { createReviewerTemplate } from '../views/templates/template-creator';
 
 const ReviewerInitiator = {
-  async init({ reviewerContainer, reviewer }) {
+  async init({
+    reviewerContainer, reviewer, nextButton, prevButton, indexSlide,
+  }) {
     this._reviewerContainer = reviewerContainer;
     this._reviewer = reviewer;
-
-    this._plusIndex = 0;
-    this._minIndex = 0;
+    this._btnNext = nextButton;
+    this._btnPrev = prevButton;
+    this._indexSlide = indexSlide;
     this._renderReviewer();
-    this._auto();
   },
 
   _renderReviewer() {
+    this._reviewerContainer.innerHTML = '';
+    this._plusIndex = 0;
+    this._minIndex = 0;
     this._reviewer.forEach((review) => {
       this._reviewerContainer.innerHTML += createReviewerTemplate(review);
     });
+    this._btnNext.addEventListener('click', () => {
+      this._plusDivs();
+      this._curDiv();
+    });
+    this._btnPrev.addEventListener('click', () => {
+      this._minDivs();
+      this._curDiv();
+    });
+    this._auto();
+  },
+
+  _refreshDiv(reviewer) {
+    clearTimeout(this._anim);
+    this._reviewer = reviewer;
+    this._renderReviewer();
+  },
+
+  _curDiv() {
+    const slides = document.getElementsByClassName('mySlides');
+    let curSlide;
+    for (let i = 0; i < slides.length; i++) {
+      if (slides[i].style.display == 'block') {
+        curSlide = i + 1;
+      }
+    }
+    this._indexSlide.innerHTML = `${curSlide}/${this._reviewer.length}`;
   },
 
   _plusDivs() {
@@ -30,7 +60,6 @@ const ReviewerInitiator = {
         }
         return;
       }
-      console.log(this._plusIndex);
       slides[this._plusIndex].style.display = 'block';
       this._plusIndex++;
     }
@@ -47,7 +76,6 @@ const ReviewerInitiator = {
       loop = this._countLoop(3);
     }
     for (let i = 0; i < loop; i++) {
-      console.log(this._minIndex);
       slides[this._minIndex].style.display = 'block';
       this._minIndex--;
     }
@@ -62,19 +90,28 @@ const ReviewerInitiator = {
   },
 
   _countLoop(index) {
-    if (screen.width > 500) {
+    let count;
+    count = 0;
+    const appWidth = window.matchMedia('(min-width: 650px)');
+    if (appWidth.matches) {
       const sisa = Math.abs(index) % 3;
       if (sisa == 0) {
-        return 3;
+        count = 3;
+      } else {
+        count = sisa;
       }
-      return sisa;
+    } else {
+      count = 1;
     }
-    return 1;
+    return count;
   },
 
   _auto() {
     this._plusDivs();
-    setTimeout(this._auto, 5000);
+    this._curDiv();
+    this._anim = setTimeout(() => {
+      this._auto();
+    }, 5000);
   },
 };
 

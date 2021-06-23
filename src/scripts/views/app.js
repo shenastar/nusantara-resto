@@ -24,13 +24,9 @@ class App {
   async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
+    console.log(`url: ${url} page: ${page}`);
     this._content.innerHTML = await page.render();
     await page.afterRender();
-  }
-
-  kirimKomentar() {
-    const html = document.querySelector('#nameF');
-    console.log(html.value);
   }
 }
 
