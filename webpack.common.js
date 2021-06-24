@@ -1,11 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
+const { InjectManifest } = require('workbox-webpack-plugin');
 const path = require('path');
-const { CleanPlugin } = require('webpack');
-const { ProvidePlugin } = require('webpack');
-const webpack = require('webpack');
 
 module.exports = {
   entry: path.resolve(__dirname, 'src/scripts/index.js'),
@@ -34,6 +33,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/templates/index.html'),
       filename: 'index.html',
@@ -46,12 +46,26 @@ module.exports = {
         },
       ],
     }),
-    new ServiceWorkerWebpackPlugin({
-      entry: path.resolve(__dirname, 'src/scripts/sw.js'),
+    new WebpackPwaManifest({
+      name: 'Nusantara Resto',
+      short_name: 'Nusa Resto',
+      description: 'Temukan restoran kesukaanmu di seluruh Nusantara',
+      start_url: '/index.html',
+      display: 'standalone',
+      background_color: '#ffffff',
+      theme_color: '#d84315',
+      crossorigin: 'use-credentials',
+      icons: [
+        {
+          src: path.resolve('src/public/favicon.png'),
+          size: [96, 128, 192, 256, 384, 512],
+          purpose: 'any maskable',
+        },
+      ],
     }),
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
+    new InjectManifest({
+      swSrc: path.resolve('src/scripts/sw.js'),
+      swDest: 'sw.js',
     }),
   ],
 };

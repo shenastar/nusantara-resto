@@ -1,17 +1,62 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-restricted-globals */
 import 'regenerator-runtime';
-import CacheHelper from './utils/cache-helper';
+import { precacheAndRoute } from 'workbox-precaching';
+import { registerRoute } from 'workbox-routing';
+import { StaleWhileRevalidate, NetworkFirst } from 'workbox-strategies';
+import { ExpirationPlugin } from 'workbox-expiration';
+import { skipWaiting, clientsClaim } from 'workbox-core';
 
-const { assets } = global.serviceWorkerOption;
+skipWaiting();
+clientsClaim();
 
-self.addEventListener('install', (event) => {
-  event.waitUntil(CacheHelper.cachingAppShell([...assets, './']));
-});
+precacheAndRoute(
+  [
+    ...self.__WB_MANIFEST,
+    // {
+    //   url: 'https://use.fontawesome.com/abf6748677.js',
+    //   revision: '1',
+    // },
+    {
+      url: 'https://fonts.googleapis.com/icon?family=Material+Icons',
+      revision: '1',
+    },
+    {
+      url: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500',
+      revision: '1',
+    },
+    {
+      url: 'https://fonts.googleapis.com/css2?family=Great+Vibes&family=Secular+One&display=swap',
+      revision: '1',
+    },
+  ],
+  {
+    ignoreURLParametersMatching: [/.*/],
+  },
+);
 
-self.addEventListener('activate', (event) => {
-  event.waitUntil(CacheHelper.deleteOldCache());
-});
+registerRoute(
+  /https:\/\/restaurant-api.dicoding.dev\/images/,
+  new StaleWhileRevalidate({
+    cacheName: 'img-resto',
+    plugins: [
+      new ExpirationPlugin({
+        maxEntries: 60,
+        maxAgeSeconds: 30 * 24 * 60 * 60,
+      }),
+    ],
+  }),
+);
 
-self.addEventListener('fetch', (event) => {
-  event.respondWith(CacheHelper.revalidateCache(event.request));
-});
+registerRoute(
+  /https:\/\/restaurant-api.dicoding.dev\/?(list|detail|search)/,
+  new NetworkFirst({
+    cacheName: 'resto-api',
+    plugins: [
+      new ExpirationPlugin({
+        maxEntries: 60,
+        maxAgeSeconds: 30 * 24 * 60 * 60,
+      }),
+    ],
+  }),
+);

@@ -14,18 +14,13 @@ const app = new App({
   content: document.querySelector('#contentHome'),
 });
 
+swRegister();
+
 window.addEventListener('hashchange', () => {
   app.renderPage();
 });
 
 window.addEventListener('load', () => {
   app.renderPage();
-  swRegister();
   WebSocketInitiator.init(CONFIG.WEB_SOCKET_SERVER);
 });
-
-// const btnKomen = document.querySelector('#btnKomen');
-
-// btnKomen.addEventListener('click', () => {
-//   app.kirimKomentar();
-// });
