@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-/* eslint-disable import/extensions */
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
 import '../styles/responsive.css';
@@ -22,5 +20,5 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage();
-  WebSocketInitiator.init(CONFIG.WEB_SOCKET_SERVER);
+  // WebSocketInitiator.init(CONFIG.WEB_SOCKET_SERVER);
 });

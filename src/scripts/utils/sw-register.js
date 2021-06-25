@@ -3,8 +3,6 @@ const swRegister = () => {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('../sw.js');
     });
-  } else {
-    console.log('gagal sw');
   }
 };
 

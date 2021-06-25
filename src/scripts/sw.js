@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-restricted-globals */
 import 'regenerator-runtime';
@@ -13,10 +14,10 @@ clientsClaim();
 precacheAndRoute(
   [
     ...self.__WB_MANIFEST,
-    // {
-    //   url: 'https://use.fontawesome.com/abf6748677.js',
-    //   revision: '1',
-    // },
+    {
+      url: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css',
+      revision: '1',
+    },
     {
       url: 'https://fonts.googleapis.com/icon?family=Material+Icons',
       revision: '1',
@@ -45,7 +46,7 @@ registerRoute(
         maxAgeSeconds: 30 * 24 * 60 * 60,
       }),
     ],
-  }),
+  })
 );
 
 registerRoute(
@@ -58,5 +59,5 @@ registerRoute(
         maxAgeSeconds: 30 * 24 * 60 * 60,
       }),
     ],
-  }),
+  })
 );
