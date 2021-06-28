@@ -40,8 +40,7 @@ const ReviewerInitiator = {
 
   _curDiv() {
     const slides = document.getElementsByClassName('mySlides');
-    let curSlide;
-    curSlide = 0;
+    let curSlide = 0;
     for (let i = 0; i < slides.length; i++) {
       if (slides[i].style.display == 'block') {
         curSlide = i + 1;

@@ -1,6 +1,6 @@
 import UrlParser from '../../routes/url-parser';
 import RestoDbSource from '../../data/restodb-source';
-import { createRestoItemTemplate } from '../templates/template-creator';
+import { createRestoItemTemplate, createErrorPageTemplate } from '../templates/template-creator';
 
 const Search = {
   async render() {
@@ -25,9 +25,15 @@ const Search = {
     const newKey = (url.key[0].toUpperCase() + url.key.substring(1)).replace(/%20/g, ' ');
     document.querySelector('.sub-heading').innerHTML = newId;
     document.querySelector('.latest__label').innerHTML = newKey;
-    posts.forEach((resto) => {
-      postsContainer.innerHTML += createRestoItemTemplate(resto);
-    });
+    if (posts.error) {
+      document.querySelector('#contentHome').innerHTML = createErrorPageTemplate(posts.message);
+      document.querySelector('.back').style.display = 'none';
+    } else {
+      posts.restaurants.forEach((resto) => {
+        postsContainer.innerHTML += createRestoItemTemplate(resto);
+      });
+      document.querySelector('.back').style.display = 'none';
+    }
   },
 };
 

@@ -57,7 +57,7 @@ module.exports = {
       name: 'Nusantara Resto',
       short_name: 'Nusa Resto',
       description: 'Temukan restoran kesukaanmu di seluruh Nusantara',
-      theme_color: '#d84315',
+      theme_color: '#141313',
       background_color: '#ffffff',
       crossorigin: 'use-credentials',
       icons: [

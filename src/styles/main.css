@@ -409,25 +409,25 @@ main {
  * footer
  */
 
-footer {
+footer-bar {
     background-color: var(--color-bg2);
     padding: 2em, 0;
     width: 100%;
     text-align: center;
 }
 
-footer ul {
+footer-bar ul {
     margin: 0 auto;
     display: inline-block;
 }
 
-footer li {
+footer-bar li {
     display: inline-block;
     margin: 0 1em;
     font-size: 14px;
 }
 
-footer a {
+footer-bar a {
     display: inline-block;
     padding: 1.3em;
     text-decoration: none;
@@ -476,7 +476,8 @@ footer a {
 
 .detail .detail__poster {
     width: 100%;
-    max-width: 375px;
+    min-width: 400px;
+    min-height: 300px;
 }
 
 .detail .detail__info h4 {
@@ -600,7 +601,7 @@ footer a {
     grid-template-columns: 1fr;
     margin: 0 auto;
     width: 100%;
-    max-width: 1000px;
+    max-width: 800px;
     gap: 5px 5px;
 }
 
@@ -609,7 +610,6 @@ footer a {
     border-radius: 5px;
     box-shadow: 0 0px 10px 0 var(--color-font);
     padding: 10px;
-
     height: 300px;
 }
 
@@ -641,7 +641,6 @@ footer a {
     font-size: 22px;
     max-height: 34px;
     margin: 5px;
-    
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -732,7 +731,6 @@ footer a {
     font-size: 20px;
 }
 
-
 .input_btn {
     /* border: none; */
     background-color: var(--color-font);
@@ -758,11 +756,69 @@ footer a {
     width: 100%;
     height: 150px;
     padding: 8px;
-    box-sizing: border-box;;
+    box-sizing: border-box;
+    ;
     border: 2px solid #ccc;
     background-color: #f8f8f8;
     font-size: 20px;
     resize: none;
 }
 
-.mySlides {display:none}
+.mySlides {
+    display: none
+}
+
+.error {
+    width: 100%;
+    margin: 10% auto;
+    text-align: center;
+    height: 210px;
+}
+
+.back {
+    position: relative;
+}
+
+.loader {
+    position: fixed;
+    border: 7px solid var(--color-bg2);
+    border-top: 7px solid var(--color-font);
+    border-bottom: 7px solid var(--color-font);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    margin-left: -50px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    z-index: 1000;
+}
+
+.blck {
+    position: fixed;
+    top: 0px;
+    background-color: var(--color-bg2);
+    width: 100%;
+    height: 100%;
+    z-index: 500;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

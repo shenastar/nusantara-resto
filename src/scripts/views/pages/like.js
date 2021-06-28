@@ -1,5 +1,5 @@
 import FavoriteMovieIdb from '../../data/favoriteresto-idb';
-import { createRestoItemTemplate } from '../templates/template-creator';
+import { createRestoItemTemplate, createErrorPageTemplate } from '../templates/template-creator';
 
 const Like = {
   async render() {
@@ -21,9 +21,15 @@ const Like = {
   async afterRender() {
     const posts = await FavoriteMovieIdb.getAllResto();
     const postsContainer = document.querySelector('#posts');
-    posts.forEach((resto) => {
-      postsContainer.innerHTML += createRestoItemTemplate(resto);
-    });
+    if (posts.length === 0) {
+      document.querySelector('#contentHome').innerHTML = createErrorPageTemplate('Favorite Kosong');
+      document.querySelector('.back').style.display = 'none';
+    } else {
+      posts.forEach((resto) => {
+        postsContainer.innerHTML += createRestoItemTemplate(resto);
+      });
+      document.querySelector('.back').style.display = 'none';
+    }
   },
 };
 

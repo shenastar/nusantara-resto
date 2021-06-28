@@ -22,6 +22,7 @@ class App {
   }
 
   async renderPage() {
+    document.querySelector('.back').style.display = 'block';
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
     this._content.innerHTML = await page.render();

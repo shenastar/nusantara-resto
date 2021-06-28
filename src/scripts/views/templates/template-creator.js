@@ -1,27 +1,16 @@
 import CONFIG from '../../globals/config';
 import 'lit';
+import './info-section';
 import './menus-food';
+import './menus-drink';
+import './review-section';
+import './footer-bar';
 import 'notyf/notyf.min.css';
 
 const createRestoDetailTemplate = (resto) => {
-  let foods;
-  let drinks;
-  let categories;
-
-  // foods = '';
-  drinks = '';
-  categories = '';
-  console.log(resto.menus.foods);
-  resto.menus.foods.forEach((food) => {
-    // foods += `<div><a href="/#/search/food/${food.name}">${food.name}</a></div>`;
-  });
-  resto.menus.drinks.forEach((drink) => {
-    drinks += `<div><a href="/#/search/drinks/${drink.name}">${drink.name}</a></div>`;
-  });
-  resto.categories.forEach((categorie) => {
-    categories += `<a class="detail__categories" href="/#/search/categories/${categorie.name}">${categorie.name}</a>`;
-  });
-
+  let foods = JSON.stringify(resto.menus.foods);
+  let drinks = JSON.stringify(resto.menus.drinks);
+  let info = JSON.stringify(resto);
   return `
     <div class="latest">
       <div class="par-heading">
@@ -32,16 +21,7 @@ const createRestoDetailTemplate = (resto) => {
     </div>
     <div class="detail">
       <img class="detail__poster" src="${CONFIG.S_IMAGE + resto.pictureId}" alt="${resto.name}" />
-      <div class="detail__info">
-        <h4>City</h4>
-        <p>${resto.city}</p>
-        <h4>Adress</h4>
-        <p>${resto.address}</p>
-        <h4>Rating</h4>
-        <p>${resto.rating}</p>
-        <h4>Categories</h4>
-        <div class="categories__margin">${categories}</div>
-      </div>
+      <info-section resto='${info}'></info-section>
       <div class="detail__description">
         <h3>Description</h3>
         <p>${resto.description}</p>
@@ -53,18 +33,8 @@ const createRestoDetailTemplate = (resto) => {
       </div>
     </div>
     <div class="menu">
-        <div class="menu_content">
-            <div class="par-heading">
-                <span class="menu_subhead">Makanan</span>
-            </div>
-            <menus-food .foods=${resto.menus.foods}>
-        </div>
-        <div class="menu_content">
-            <div class="par-heading">
-                <span class="menu_subhead">Minuman</span>
-            </div>
-            <div class="menu_list">${drinks}</div>
-        </div>
+        <menus-food foods='${foods}'></menus-food>
+        <menus-drink drinks='${drinks}'></menus-drink>
     </div>
     <div class="latest">
         <div class="par-heading">
@@ -72,30 +42,7 @@ const createRestoDetailTemplate = (resto) => {
             <h1 class="latest__label font_h2">Customer</h1>
         </div>
     </div>
-    <div class="reviews" id="contentReviews"></div>
-    <div class="reviews_foot">
-        <button class="fa fa-angle-left"></button>
-        <div id="indexSlide"> Oiw </div>
-        <button class="fa fa-angle-right"></button>
-    </div>
-    <div class="reviews_input">
-        <div class="reviews_title">
-            <h2>Review Baru</h2>
-        </div>
-        <div class="reviews_form">
-            <div class="form_input">
-                <label><b>Nama</b></label>
-                <input id="inputName" name="first" type="text">
-            </div>
-            <div class="form_input">
-                <label class="reviews_subtitle"><b>Reviews</b></label>
-                <textarea id="inputReview"></textarea>
-            </div>
-            <div>
-                <button class="input_btn" id="btnReview">Kirim</button>
-            </div>
-        </div>
-    </div>
+    <review-section></review-section>
   `;
 };
 
@@ -120,6 +67,16 @@ const createRestoItemTemplate = (resto) => {
     </article>
   `;
 };
+
+const createErrorPageTemplate = (message) => `
+  <section class="content">
+      <div class="error">
+          <div class="par-heading">
+              <h1 class="latest__label font_h2">${message}</h1>
+          </div>
+      </div>
+  </section>
+`;
 
 const createLikeButtonTemplate = () => `
   <button aria-label="like this movie" id="likeButton" class="like">
@@ -157,4 +114,5 @@ export {
   createLikeButtonTemplate,
   createLikedButtonTemplate,
   createReviewerTemplate,
+  createErrorPageTemplate,
 };

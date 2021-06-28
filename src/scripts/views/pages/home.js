@@ -1,5 +1,5 @@
 import RestoDbSource from '../../data/restodb-source';
-import { createRestoItemTemplate } from '../templates/template-creator';
+import { createRestoItemTemplate, createErrorPageTemplate } from '../templates/template-creator';
 
 const Home = {
   async render() {
@@ -27,9 +27,15 @@ const Home = {
   async afterRender() {
     const posts = await RestoDbSource.listResto();
     const postsContainer = document.querySelector('#posts');
-    posts.forEach((resto) => {
-      postsContainer.innerHTML += createRestoItemTemplate(resto);
-    });
+    if (posts.error) {
+      document.querySelector('#contentHome').innerHTML = createErrorPageTemplate(posts.message);
+      document.querySelector('.back').style.display = 'none';
+    } else {
+      posts.restaurants.forEach((resto) => {
+        postsContainer.innerHTML += createRestoItemTemplate(resto);
+      });
+      document.querySelector('.back').style.display = 'none';
+    }
   },
 };
 

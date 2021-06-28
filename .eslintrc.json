@@ -18,6 +18,7 @@
         "no-unused-vars":"off",
         "no-plusplus":"off",
         "eqeqeq": "off",
-        "no-alert":"off"
+        "no-alert":"off",
+        "prefer-const":"off"
     }
 }

@@ -1,26 +1,23 @@
-import { html, css, LitElement } from 'lit';
-
-class SimpleGreeting extends LitElement {
-  static get styles() {
-    return css`p { color: blue }`;
-  }
-
-  static get properties() {
-    return {
-      name: { type: String },
-    };
-  }
-
-  constructor() {
-    super();
-    this.name = 'Somebody';
+class MenusDrink extends HTMLElement {
+  connectedCallback() {
+    this.render();
   }
 
   render() {
-    return html`<p>Hello, ${this.name}!</p>`;
+    let drinks = JSON.parse(this.attributes.drinks.value);
+    this.className = 'menu_content';
+    this.style.display = 'block';
+    let list = '';
+    drinks.forEach((drink) => {
+      list += `<div><a href="/#/search/drinks/${drink.name}">${drink.name}</a></div>`;
+    });
+    this.innerHTML = `
+    <div class="par-heading">
+        <span class="menu_subhead">Minuman</span>
+    </div>
+    <div class="menu_list">${list}</div>
+    `;
   }
 }
 
-customElements.define('simple-greeting', SimpleGreeting);
-
-export default SimpleGreeting;
+customElements.define('menus-drink', MenusDrink);
