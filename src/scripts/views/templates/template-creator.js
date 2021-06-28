@@ -1,16 +1,19 @@
 import CONFIG from '../../globals/config';
+import 'lit';
+import './menus-food';
+import 'notyf/notyf.min.css';
 
 const createRestoDetailTemplate = (resto) => {
   let foods;
   let drinks;
   let categories;
 
-  foods = '';
+  // foods = '';
   drinks = '';
   categories = '';
-
+  console.log(resto.menus.foods);
   resto.menus.foods.forEach((food) => {
-    foods += `<div><a href="/#/search/food/${food.name}">${food.name}</a></div>`;
+    // foods += `<div><a href="/#/search/food/${food.name}">${food.name}</a></div>`;
   });
   resto.menus.drinks.forEach((drink) => {
     drinks += `<div><a href="/#/search/drinks/${drink.name}">${drink.name}</a></div>`;
@@ -54,7 +57,7 @@ const createRestoDetailTemplate = (resto) => {
             <div class="par-heading">
                 <span class="menu_subhead">Makanan</span>
             </div>
-            <div class="menu_list">${foods}</div>
+            <menus-food .foods=${resto.menus.foods}>
         </div>
         <div class="menu_content">
             <div class="par-heading">

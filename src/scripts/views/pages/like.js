@@ -4,12 +4,6 @@ import { createRestoItemTemplate } from '../templates/template-creator';
 const Like = {
   async render() {
     return `
-    <div class="hero">
-        <div class="hero__inner">
-            <h1 class="hero__title font_h1">Nusantara Resto</h1>
-            <p class="hero__tagline">Temukan restoran kesukaanmu di seluruh Nusantara</p>
-        </div>
-    </div>
     <main id="mainContent">
         <section class="content">
             <div class="latest">

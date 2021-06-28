@@ -10,7 +10,16 @@ const ReviewerInitiator = {
     this._btnNext = nextButton;
     this._btnPrev = prevButton;
     this._indexSlide = indexSlide;
+    this._windowed = true;
     this._renderReviewer();
+    this._btnNext.addEventListener('click', () => {
+      this._plusDivs();
+      this._curDiv();
+    });
+    this._btnPrev.addEventListener('click', () => {
+      this._minDivs();
+      this._curDiv();
+    });
   },
 
   _renderReviewer() {
@@ -19,14 +28,6 @@ const ReviewerInitiator = {
     this._minIndex = 0;
     this._reviewer.forEach((review) => {
       this._reviewerContainer.innerHTML += createReviewerTemplate(review);
-    });
-    this._btnNext.addEventListener('click', () => {
-      this._plusDivs();
-      this._curDiv();
-    });
-    this._btnPrev.addEventListener('click', () => {
-      this._minDivs();
-      this._curDiv();
     });
     this._auto();
   },
@@ -40,6 +41,7 @@ const ReviewerInitiator = {
   _curDiv() {
     const slides = document.getElementsByClassName('mySlides');
     let curSlide;
+    curSlide = 0;
     for (let i = 0; i < slides.length; i++) {
       if (slides[i].style.display == 'block') {
         curSlide = i + 1;
@@ -91,19 +93,28 @@ const ReviewerInitiator = {
 
   _countLoop(index) {
     let count;
-    count = 0;
-    const appWidth = window.matchMedia('(min-width: 650px)');
-    if (appWidth.matches) {
-      const sisa = Math.abs(index) % 3;
-      if (sisa == 0) {
-        count = 3;
-      } else {
+    if (this._cekAppWidth()) {
+      count = 3;
+      const sisa = Math.abs(this._reviewer.length) % 3;
+      if (index == this._reviewer.length && this._reviewer.length > 3) {
         count = sisa;
+      } else {
+        count = 3;
       }
     } else {
       count = 1;
     }
     return count;
+  },
+
+  _cekAppWidth() {
+    const appWidth = window.matchMedia('(min-width: 650px)');
+    if (appWidth.matches) {
+      this._windowed = true;
+    } else {
+      this._windowed = false;
+    }
+    return appWidth.matches;
   },
 
   _auto() {
@@ -114,5 +125,13 @@ const ReviewerInitiator = {
     }, 5000);
   },
 };
+
+window.addEventListener('resize', () => {
+  const appWidth = window.matchMedia('(min-width: 650px)');
+  if (appWidth.matches !== ReviewerInitiator._windowed) {
+    ReviewerInitiator._refreshDiv(ReviewerInitiator._reviewer);
+    ReviewerInitiator._cekAppWidth();
+  }
+});
 
 export default ReviewerInitiator;
