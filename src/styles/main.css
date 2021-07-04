@@ -61,14 +61,6 @@ body {
     margin-right: auto;
 }
 
-.header__title {
-    font-weight: 300;
-    font-size: 4em;
-    margin: 0.5em 0.25em;
-    display: inline-block;
-    color: #212121;
-}
-
 .header__menu {
     font-size: 32px;
     margin-top: 10px;
@@ -410,21 +402,11 @@ main {
  */
 
 footer-bar {
+    display: block;
     background-color: var(--color-bg2);
-    padding: 2em, 0;
     width: 100%;
     text-align: center;
-}
-
-footer-bar ul {
-    margin: 0 auto;
-    display: inline-block;
-}
-
-footer-bar li {
-    display: inline-block;
-    margin: 0 1em;
-    font-size: 14px;
+    bottom: 0;
 }
 
 footer-bar a {
@@ -476,8 +458,8 @@ footer-bar a {
 
 .detail .detail__poster {
     width: 100%;
-    min-width: 400px;
-    min-height: 300px;
+    min-width: 100px;
+    min-height: 50px;
 }
 
 .detail .detail__info h4 {
@@ -656,6 +638,7 @@ footer-bar a {
 .reviews_des p {
     overflow: hidden;
     text-overflow: ellipsis;
+    word-break: break-word;
     display: -webkit-box;
     -webkit-line-clamp: 7;
     -webkit-box-orient: vertical;
@@ -723,7 +706,7 @@ footer-bar a {
 }
 
 .form_input input {
-    padding: 8px;
+    padding: 10px;
     display: block;
     border: none;
     border-bottom: 1px solid var(--color-font2);

@@ -1,6 +1,5 @@
 import CONFIG from './config';
 
-// edit this
 const API_ENDPOINT = {
   LIST_RESTO: `${CONFIG.BASE_URL}list`,
   DETAIL: (id) => `${CONFIG.BASE_URL}detail/${id}`,

@@ -19,15 +19,19 @@ const Like = {
   },
 
   async afterRender() {
-    const posts = await FavoriteMovieIdb.getAllResto();
-    const postsContainer = document.querySelector('#posts');
-    if (posts.length === 0) {
-      document.querySelector('#contentHome').innerHTML = createErrorPageTemplate('Favorite Kosong');
-      document.querySelector('.back').style.display = 'none';
-    } else {
-      posts.forEach((resto) => {
-        postsContainer.innerHTML += createRestoItemTemplate(resto);
-      });
+    try {
+      const posts = await FavoriteMovieIdb.getAllResto();
+      const postsContainer = document.querySelector('#posts');
+      if (posts.length === 0) {
+        throw 'Favorite Kosong';
+      } else {
+        posts.forEach((resto) => {
+          postsContainer.innerHTML += createRestoItemTemplate(resto);
+        });
+      }
+    } catch (err) {
+      document.querySelector('#mainContent').innerHTML = createErrorPageTemplate(err);
+    } finally {
       document.querySelector('.back').style.display = 'none';
     }
   },

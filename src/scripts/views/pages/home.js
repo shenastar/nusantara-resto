@@ -25,15 +25,19 @@ const Home = {
   },
 
   async afterRender() {
-    const posts = await RestoDbSource.listResto();
-    const postsContainer = document.querySelector('#posts');
-    if (posts.error) {
-      document.querySelector('#contentHome').innerHTML = createErrorPageTemplate(posts.message);
-      document.querySelector('.back').style.display = 'none';
-    } else {
-      posts.restaurants.forEach((resto) => {
-        postsContainer.innerHTML += createRestoItemTemplate(resto);
-      });
+    try {
+      const posts = await RestoDbSource.listResto();
+      const postsContainer = document.querySelector('#posts');
+      if (posts.error) {
+        throw posts.message;
+      } else {
+        posts.restaurants.forEach((resto) => {
+          postsContainer.innerHTML += createRestoItemTemplate(resto);
+        });
+      }
+    } catch (err) {
+      document.querySelector('#mainContent').innerHTML = createErrorPageTemplate(err);
+    } finally {
       document.querySelector('.back').style.display = 'none';
     }
   },

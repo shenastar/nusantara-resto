@@ -19,6 +19,7 @@
         "no-plusplus":"off",
         "eqeqeq": "off",
         "no-alert":"off",
-        "prefer-const":"off"
+        "prefer-const":"off",
+        "no-throw-literal": "off"
     }
 }
