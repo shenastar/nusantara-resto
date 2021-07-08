@@ -14,7 +14,7 @@ const NewReviewer = {
     });
   },
 
-  async _AddNewReview(newJson) {
+  async _addNewReview(newJson) {
     const newR = await RestoDbSource.inputReview(newJson);
     if (newR.message === 'success') {
       this._notification('success');
@@ -41,7 +41,7 @@ const NewReviewer = {
         name: this._inputName.value,
         review: this._inputReview.value,
       };
-      this._AddNewReview(newJson);
+      this._addNewReview(newJson);
     }
   },
 

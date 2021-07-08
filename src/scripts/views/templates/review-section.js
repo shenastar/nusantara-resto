@@ -7,9 +7,9 @@ class ReviewSection extends HTMLElement {
     this.innerHTML = `
     <div class="reviews" id="contentReviews"></div>
     <div class="reviews_foot">
-        <button class="fa fa-angle-left"></button>
+        <button aria-label="review sebelumnya" class="fa fa-angle-left"></button>
         <div id="indexSlide"> Oiw </div>
-        <button class="fa fa-angle-right"></button>
+        <button aria-label="review selanjutnya" class="fa fa-angle-right"></button>
     </div>
     <div class="reviews_input">
         <div class="reviews_title">

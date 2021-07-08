@@ -400,8 +400,8 @@ main {
 /*
  * footer
  */
-
-footer-bar {
+ 
+footer {
     display: block;
     background-color: var(--color-bg2);
     width: 100%;
@@ -409,7 +409,7 @@ footer-bar {
     bottom: 0;
 }
 
-footer-bar a {
+footer a {
     display: inline-block;
     padding: 1.3em;
     text-decoration: none;
