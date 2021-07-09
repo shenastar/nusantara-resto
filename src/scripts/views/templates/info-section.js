@@ -26,4 +26,6 @@ class InfoSection extends HTMLElement {
   }
 }
 
-customElements.define('info-section', InfoSection);
+if (!customElements.get('info-section')) {
+  customElements.define('info-section', InfoSection);
+}

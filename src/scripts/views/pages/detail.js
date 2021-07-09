@@ -4,6 +4,7 @@ import { createRestoDetailTemplate, createErrorPageTemplate } from '../templates
 import LikeButtonInitiator from '../../utils/like-button-initiator';
 import ReviewerInitiator from '../../utils/reviewer-initiator';
 import NewReviewer from '../../utils/new-reviewer';
+import FavoriteRestoIdb from '../../data/favoriteresto-idb';
 
 const Detail = {
   async render() {
@@ -26,6 +27,7 @@ const Detail = {
         detailContainer.innerHTML = createRestoDetailTemplate(detail.restaurant);
         LikeButtonInitiator.init({
           likeButtonContainer: document.querySelector('#likeButtonContainer'),
+          favoriteResto: FavoriteRestoIdb,
           resto: {
             id: detail.restaurant.id,
             name: detail.restaurant.name,

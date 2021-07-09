@@ -4,8 +4,7 @@ import './info-section';
 import './menus-food';
 import './menus-drink';
 import './review-section';
-import './footer-bar';
-import 'notyf/notyf.min.css';
+// import 'notyf/notyf.min.css';
 
 const createRestoDetailTemplate = (resto) => {
   let foods = JSON.stringify(resto.menus.foods);

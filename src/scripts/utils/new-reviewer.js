@@ -25,9 +25,9 @@ const NewReviewer = {
   },
 
   _refreshReviewer(reviews) {
+    document.querySelector('#inputName').value = null;
+    document.querySelector('#inputReview').value = null;
     ReviewerInitiator._refreshDiv(reviews);
-    this._inputName = '';
-    this._inputReview = '';
   },
 
   _btnClick() {

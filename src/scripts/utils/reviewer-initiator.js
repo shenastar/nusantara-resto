@@ -53,7 +53,6 @@ const ReviewerInitiator = {
     const slides = this._hideReviewer();
     this._minIndex = this._plusIndex - 1;
     const loop = this._countLoop(this._plusIndex);
-    console.log(loop);
     for (let i = 0; i < loop; i++) {
       if (this._plusIndex >= slides.length) {
         this._plusIndex = 0;

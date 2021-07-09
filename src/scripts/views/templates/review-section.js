@@ -33,4 +33,6 @@ class ReviewSection extends HTMLElement {
   }
 }
 
-customElements.define('review-section', ReviewSection);
+if (!customElements.get('review-section')) {
+  customElements.define('review-section', ReviewSection);
+}

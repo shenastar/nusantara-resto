@@ -20,4 +20,6 @@ class MenusFood extends HTMLElement {
   }
 }
 
-customElements.define('menus-food', MenusFood);
+if (!customElements.get('menus-food')) {
+  customElements.define('menus-food', MenusFood);
+}

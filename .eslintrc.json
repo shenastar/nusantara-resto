@@ -21,5 +21,6 @@
         "no-alert":"off",
         "prefer-const":"off",
         "no-throw-literal": "off"
-    }
+    },
+    "plugins": ["jasmine"]
 }
