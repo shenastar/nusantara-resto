@@ -46,22 +46,25 @@ const createRestoDetailTemplate = (resto) => {
 };
 
 const createRestoItemTemplate = (resto) => {
-  const rating = resto.rating.toFixed(1);
+  let rating = '';
+  if(resto.rating != null) {
+    rating = resto.rating.toFixed(1);
+  }
   return `
-    <article class="post-item">
-        <img class="post-item__thumbnail" src="${CONFIG.S_IMAGE + resto.pictureId}"
+    <article class="resto-item">
+        <img class="resto-item__thumbnail" src="${resto.pictureId? CONFIG.S_IMAGE + resto.pictureId : '-'}"
             alt="gambar-${resto.name}">
-        <div class="post-item__content">
-            <p class="post-item__date">${resto.city}</p>
-            <div class="post-item__head">
-                <p class="post-item__date">${resto.city}</p>
-                <h1 class="post-item__title"><a href="${`/#/detail/${resto.id}`}">${resto.name}</a></h1>
+        <div class="resto-item__content">
+            <p class="resto-item__date">${resto.city}</p>
+            <div class="resto-item__head">
+                <p class="resto-item__date">${resto.city}</p>
+                <h1 class="resto-item__title"><a href="${`/#/detail/${resto.id}`}">${resto.name || '-'}</a></h1>
             </div>
-            <div class="post-item__rating">
+            <div class="resto-item__rating">
                 <span class="material-icons rating-icon">star_rate</span>
                 <p class="rating-text">${rating}</p>
             </div>
-            <p class="post-item__description">${resto.description}</p>
+            <p class="resto-item__description">${resto.description}</p>
         </div>
     </article>
   `;

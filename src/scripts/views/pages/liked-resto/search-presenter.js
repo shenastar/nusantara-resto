@@ -1,27 +1,28 @@
 class FavoriteRestoSearchPresenter {
-  constructor({ favoriteResto }) {
+  constructor({ favoriteResto, view }) {
+    this._view = view;
     this._listenToSearchRequestByUser();
     this._favoriteResto = favoriteResto;
   }
 
   _listenToSearchRequestByUser() {
-    this._queryElement = document.getElementById('query');
-    this._queryElement.addEventListener('change', (event) => {
-        this._searchResto(event.target.value);
+    this._view.runWhenUserIsSearching((latestQuery) => {
+      this._searchResto(latestQuery);
     });
   }
 
-  _searchResto(latestQuery) {
-    this._latestQuery = latestQuery;
-    this._favoriteResto.searchResto(this.latestQuery);
+  async _searchResto(latestQuery) {
+    this._latestQuery = latestQuery.trim();
+    let foundResto;
+    if(this.latestQuery.length > 0) {
+      foundResto = await this._favoriteResto.searchResto(this.latestQuery);
+    } else {
+      foundResto = await this._favoriteResto.getAllResto();
+    }
   }
 
   _showFoundResto(resto) {
-    const html = resto.reduce(
-      (carry, resto) => carry.concat(`<li class="resto"><span class="resto__title">${resto.title || '-'}</span></li>`), '',
-    );
-
-    document.querySelector('.resto').innerHTML = html;
+    this._view.showFavoriteResto(resto);
   }
  
   get latestQuery() {

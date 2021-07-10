@@ -57,6 +57,19 @@ const itActsAsFavoriteRestoModel = (favoriteresto) => {
           { id: 3 },
         ]);
     });
+
+    it('should be able to search for resto', async () => {
+      favoriteresto.putResto({ id: 1, title: 'resto a' });
+      favoriteresto.putResto({ id: 2, title: 'resto b' });
+      favoriteresto.putResto({ id: 3, title: 'resto abc' });
+      favoriteresto.putResto({ id: 4, title: 'ini mah resto abcd' });
+  
+      expect(await favoriteresto.searchResto('resto a')).toEqual([
+        { id: 1, title: 'resto a' },
+        { id: 3, title: 'resto abc' },
+        { id: 4, title: 'ini mah resto abcd' },
+      ]);
+    });
   };
   
   export { itActsAsFavoriteRestoModel };
