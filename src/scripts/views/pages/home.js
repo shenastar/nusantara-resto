@@ -6,8 +6,15 @@ const Home = {
     return `
     <div class="hero">
         <div class="hero__inner">
-            <h1 class="hero__title font_h1">Nusantara Resto</h1>
-            <p class="hero__tagline">Temukan restoran kesukaanmu di seluruh Nusantara</p>
+          <picture>
+              <source media="(max-width: 600px)" srcset="./images/heros/hero-image_2.jpg">
+              <img 
+                  src="./images/heros/hero-image_2.jpg" 
+                  alt="hero-image">
+              </img>
+          </picture>
+          <h1 class="hero__title font_h1">Nusantara Resto</h1>
+          <p class="hero__tagline">Temukan restoran kesukaanmu di seluruh Nusantara</p>
         </div>
     </div>
     <main id="mainContent">

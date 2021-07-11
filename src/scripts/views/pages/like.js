@@ -1,19 +1,39 @@
-/* eslint-disable no-new */
-import FavoriteRestoIdb from '../../data/favoriteresto-idb';
-import FavoriteRestoSearchView from './liked-resto/search-view';
-import FavoriteRestoShowPresenter from './liked-resto/show-presenter';
-import FavoriteRestoSearchPresenter from './liked-resto/search-presenter';
-
-const view = new FavoriteRestoSearchView();
+import FavoriteMovieIdb from '../../data/favoriteresto-idb';
+import { createRestoItemTemplate, createErrorPageTemplate } from '../templates/template-creator';
 
 const Like = {
   async render() {
-    return view.getTemplate();
+    return `
+    <main id="mainContent">
+        <section class="content">
+            <div class="latest">
+                <div class="par-heading">
+                    <span class="sub-heading">Favorite</span>
+                    <h1 class="latest__label font_h2">Restaurant</h1>
+                </div>
+                <div class="posts" id="posts"></div>
+            </div>
+        </section>
+    </main>
+    `;
   },
 
   async afterRender() {
-    new FavoriteRestoShowPresenter({ view, favoriteResto: FavoriteRestoIdb });
-    new FavoriteRestoSearchPresenter({ view, favoriteResto: FavoriteRestoIdb });
+    try {
+      const posts = await FavoriteMovieIdb.getAllResto();
+      const postsContainer = document.querySelector('#posts');
+      if (posts.length === 0) {
+        throw 'Favorite Kosong';
+      } else {
+        posts.forEach((resto) => {
+          postsContainer.innerHTML += createRestoItemTemplate(resto);
+        });
+      }
+    } catch (err) {
+      document.querySelector('#mainContent').innerHTML = createErrorPageTemplate(err);
+    } finally {
+      document.querySelector('.back').style.display = 'none';
+    }
   },
 };
 

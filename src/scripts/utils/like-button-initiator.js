@@ -1,6 +1,6 @@
-import { 
+import {
   createLikeButtonTemplate,
-  createLikedButtonTemplate
+  createLikedButtonTemplate,
 } from '../views/templates/template-creator';
 
 const LikeButtonInitiator = {

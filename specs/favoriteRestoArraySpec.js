@@ -1,3 +1,7 @@
+/* eslint-disable no-prototype-builtins */
+/* eslint-disable consistent-return */
+/* eslint-disable no-undef */
+/* eslint-disable no-return-assign */
 import { itActsAsFavoriteRestoModel } from './contract/favoriteRestoContract';
 
 let favoriteResto = [];
