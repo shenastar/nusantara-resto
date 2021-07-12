@@ -4,6 +4,26 @@
     grid-row-gap: 16px;
 }
 
+@media screen and (min-width: 300px){
+    .sub-heading {
+        top: -25px;
+        font-size: 65px;
+    }
+    .font_h2 {
+        font-size: 35px;
+    }
+}
+
+@media screen and (min-width: 400px){
+    .sub-heading {
+        top: -25px;
+        font-size: 75px;
+    }
+    .font_h2 {
+        font-size: 35px;
+    }
+}
+
 @media screen and (max-width: 499px) {
     .header{
         z-index: 11;
@@ -21,18 +41,15 @@
         /* Optionally, we animate the drawer. */
         transition: transform 0.5s ease;
     }
-
     .open {
         -webkit-transform: translate(0, 0);
         transform: translate(0, 0);
     }
-
     .nav__item {
         display: list-item;
         width: 100%;
         text-align: left;
     }
-
     .nav__item a{
         width: 100%;
     }
@@ -55,6 +72,13 @@
 @media screen and (min-width: 500px) {
     .header__menu {
         display: none;
+    }
+    .sub-heading {
+        top: -40px;
+        font-size: 100px;
+    }
+    .font_h2 {
+        font-size: 50px;
     }
 }
 

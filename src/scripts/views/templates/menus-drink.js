@@ -20,6 +20,6 @@ class MenusDrink extends HTMLElement {
   }
 }
 
-if (!customElements.get('info-section')) {
+if (!customElements.get('menus-drink')) {
   customElements.define('menus-drink', MenusDrink);
 }

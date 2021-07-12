@@ -6,9 +6,11 @@ const FaviconWebpackPlugin = require('favicons-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const { InjectManifest } = require('workbox-webpack-plugin');
-const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
-const ImageminMozjpeg = require('imagemin-mozjpeg');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin')
+// const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default
+// const ImageminMozjpeg = require('imagemin-mozjpeg');
+// const ImageminPngQuant = require('imagemin-pngquant');
 const path = require('path');
 
 module.exports = {
@@ -29,14 +31,7 @@ module.exports = {
       },
       {
         test: /\.(scss|css)$/,
-        use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-          },
-        ],
+        loaders: ['style-loader', 'css-loader', 'sass-loader'],
       },
     ],
   },
@@ -77,14 +72,28 @@ module.exports = {
       swSrc: path.resolve('src/scripts/sw.js'),
       swDest: 'sw.js',
     }),
-    new ImageminWebpackPlugin({
-      plugins: [
-        ImageminMozjpeg({
-          quality: 50,
-          progressive: true,
-        }),
-      ],
-    }),
+    // new ImageminWebpackPlugin({
+    //   plugins: [
+    //     ImageminMozjpeg({
+    //       quality: 50,
+    //       progressive: true
+    //     }),
+    //     ImageminPngQuant({
+    //       quality: [0.3, 0.5]
+    //     })
+    //   ]
+    // }),
+    // new ImageminWebpWebpackPlugin({
+    //   config: [
+    //     {
+    //       test: /\.(jpe?g|png)/,
+    //       options: {
+    //         quality: 50
+    //       }
+    //     }
+    //   ],
+    //   overrideExtension: true
+    // }),
     new CopyWebpackPlugin({
       patterns: [
         {
