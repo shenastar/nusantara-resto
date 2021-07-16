@@ -19,7 +19,7 @@ const createRestoDetailTemplate = (resto) => {
       </div>
     </div>
     <div class="detail">
-      <img class="detail__poster lazyload" src="${CONFIG.S_IMAGE + resto.pictureId}" alt="${resto.name}" />
+      <img class="detail__poster lazyload" data-src="${CONFIG.S_IMAGE + resto.pictureId}" alt="${resto.name}" />
       <info-section resto='${info}'></info-section>
       <div class="detail__description">
         <h3>Description</h3>
@@ -49,7 +49,7 @@ const createRestoItemTemplate = (resto) => {
   const rating = resto.rating.toFixed(1);
   return `
     <article class="resto-item">
-        <img class="resto-item__thumbnail lazyload" src="${resto.pictureId ? CONFIG.S_IMAGE + resto.pictureId : '-'}"
+        <img class="resto-item__thumbnail lazyload" data-src="${resto.pictureId ? CONFIG.S_IMAGE + resto.pictureId : '-'}"
             alt="gambar-${resto.name}">
         <div class="resto-item__content">
             <p class="resto-item__date">${resto.city}</p>
@@ -69,7 +69,7 @@ const createRestoItemTemplate = (resto) => {
 
 const createErrorPageTemplate = (message) => `
   <section class="content">
-      <div class="error">
+      <div class="error resto-item__not__found">
           <div class="par-heading">
               <h1 class="latest__label font_h2">${message}</h1>
           </div>

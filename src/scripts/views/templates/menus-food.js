@@ -9,7 +9,7 @@ class MenusFood extends HTMLElement {
     this.style.display = 'block';
     let list = '';
     foods.forEach((food) => {
-      list += `<div><a href="/#/search/foods/${food.name}">${food.name}</a></div>`;
+      list += `<div><a class="food_name" href="/#/search/foods/${food.name}">${food.name}</a></div>`;
     });
     this.innerHTML = `
     <div class="par-heading">

@@ -5,7 +5,7 @@ const { setHeadlessWhen } = require('@codeceptjs/configure')
 setHeadlessWhen(process.env.HEADLESS)
 
 exports.config = {
-  tests: 'e2e/**/liking_resto.spec.js',
+  tests: 'e2e/**/e2e_resto.spec.js',
   output: 'e2e/outputs',
   helpers: {
     Puppeteer: {

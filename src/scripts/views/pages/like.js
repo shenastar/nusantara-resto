@@ -23,7 +23,7 @@ const Like = {
       const posts = await FavoriteMovieIdb.getAllResto();
       const postsContainer = document.querySelector('#posts');
       if (posts.length === 0) {
-        throw 'Favorite Kosong';
+        throw 'Tidak ada resto untuk ditampilkan';
       } else {
         posts.forEach((resto) => {
           postsContainer.innerHTML += createRestoItemTemplate(resto);
