@@ -6,8 +6,8 @@ const FaviconWebpackPlugin = require('favicons-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const { InjectManifest } = require('workbox-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin')
-const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default
+const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
+const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 // const ImageminPngQuant = require('imagemin-pngquant');
 const path = require('path');
@@ -66,7 +66,7 @@ module.exports = {
       plugins: [
         ImageminMozjpeg({
           quality: 50,
-          progressive: true
+          progressive: true,
         }),
       ],
     }),
@@ -75,11 +75,11 @@ module.exports = {
         {
           test: /\.(jpe?g|png)/,
           options: {
-            quality: 50
-          }
-        }
+            quality: 50,
+          },
+        },
       ],
-      overrideExtension: true
+      overrideExtension: true,
     }),
     new CopyWebpackPlugin({
       patterns: [

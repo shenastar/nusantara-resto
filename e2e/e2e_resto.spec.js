@@ -96,5 +96,5 @@ Scenario('Search one resto by Foods', async ({ I }) => {
   I.click(firstSearchResto);
   I.seeElement('.food_name');
   const firstSearchFood = await I.grabTextFrom('.food_name');
-  assert.strictEqual(foodName, firstSearchFood);  
+  assert.strictEqual(foodName, firstSearchFood);
 });
